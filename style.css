@@ -254,11 +254,17 @@ section {
     transform: rotate(-1deg); */
      /* COOL */
 
-     @media (max-width: 768px) {
-        gap: 2em;
-    }
+
     
 }
+
+@media (max-width: 768px) {
+    .gallery {
+        gap: 2em;
+    }
+}
+
+
 
 
     .gallery-item {
