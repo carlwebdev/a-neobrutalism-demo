@@ -258,11 +258,7 @@ section {
     
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        gap: 2em;
-    }
-}
+
 
 
 
@@ -295,6 +291,22 @@ section {
         }
 
             
+
+
+
+
+@media (max-width: 768px) {
+
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+
+}
+
+
+
 
 
 
