@@ -253,7 +253,13 @@ section {
     /*
     transform: rotate(-1deg); */
      /* COOL */
+
+     @media (max-width: 768px) {
+        gap: 2em;
+    }
+    
 }
+
 
     .gallery-item {
         overflow: hidden; /* ??? */
@@ -915,7 +921,7 @@ marquee /* ,
         }
     }
     */
-
+/* OBS - THIS COMMENT WASNT BEING APLIED YET TO GITHUB AGES REPO */
 
 
 
