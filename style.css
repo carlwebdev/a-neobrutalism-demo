@@ -907,14 +907,14 @@ marquee /* ,
         background: var(--c-accent);
         transform: scale(1.5);
     }
-    
+    /*
     @media (max-width: 768px) {
         .snap-section {
             height: auto;
             min-height: 100vh;
         }
     }
-
+    */
 
 
 
