@@ -238,7 +238,9 @@ section {
 
 
 
-/* Add these new styles */
+/*
+ * GALLERY 
+ */
 
 .gallery {
     display: grid;
@@ -249,18 +251,11 @@ section {
     /* padding-block: 3em;*/
     /* padding-block: 6em; *
     
-    
     /*
     transform: rotate(-1deg); */
      /* COOL */
 
-
-    
 }
-
-
-
-
 
 
     .gallery-item {
@@ -272,14 +267,8 @@ section {
         box-shadow: var(--box-shadow);
         border: var(--border-width) var(--border-style) var(--border-color); 
         border-radius: var(--border-radius);
-    }
 
-        .gallery-item.large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .gallery img {
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -290,9 +279,12 @@ section {
             }
         }
 
-            
+        &.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
 
-
+    }
 
 
 @media (max-width: 768px) {
@@ -304,6 +296,9 @@ section {
     }
 
 }
+
+
+
 
 
 
@@ -541,6 +536,12 @@ marquee /* ,
 
 
 
+
+
+/*
+ * STAFF 
+ */
+
 .staff-section {
     padding: 4rem 2rem;
     background: var(--c-bg);
@@ -602,6 +603,10 @@ marquee /* ,
 
 
 
+
+/*
+ * CONTACT 
+ */    
 
     .contact-section {
         padding: 4rem 2rem;
@@ -688,6 +693,11 @@ marquee /* ,
 
 
 
+
+/*
+ * NEWSLETTER 
+ */
+
     .newsletter-section {
         padding: 6rem 2rem;
         background: var(--c-bg-alt);
@@ -760,6 +770,15 @@ marquee /* ,
     }
 
 
+
+
+
+
+/*
+ * ABOUT 
+ */
+ 
+ 
 
     .about-section {
         padding: 6rem 2rem;
@@ -866,6 +885,11 @@ marquee /* ,
             grid-template-columns: 1fr;
         }
     }
+
+
+
+
+
 
 
 
@@ -1019,6 +1043,17 @@ marquee /* ,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*
  * TESTIMONIALS
  */
@@ -1088,12 +1123,3 @@ marquee /* ,
     display: inline-block;
     transform: rotate(-2deg);
 }
-
-
-
-
-
-
-
-
-
