@@ -16,7 +16,7 @@
     --c-bg: #000;
     */
     /*
-    --ff: 'Courier New', Courier, monospace;
+    --ff: 'Courier New', Courier, monospace; // 'Times New Roman', Times, serif, monospace; (use times new roman for a brutalism demo)
     */
     --ff: "Work Sans", serif;
 
@@ -36,18 +36,16 @@
 
 
 
-body {
+body { 
+    background: var(--c-text); /* ??? */
     font-family: var(--ff);
-    /* font-family: 'Times New Roman', Times, serif, monospace; */
-    background: var(--c-text);
-    color: var(--c-bg);
-    line-height: 1.6;
-
-    color: black;
-    
     font-weight: bold;
-    
-    
+    /*
+    color: var(--c-bg);
+    color: black;
+    */
+    color: var(--c-text);    
+    line-height: 1.6;
 }
 
 
@@ -71,9 +69,7 @@ header {
     
 }
 
-section {
-    border: 2px solid black; 
-}
+
 
 
 img.logo {
@@ -88,6 +84,7 @@ nav.nav,
 menu {
     display: flex;
     gap: 2em;
+    flex-wrap: wrap; /* PRECAUTION */
     /*  background-color: var(--c-text); */ 
     /* border: 1px solid var(--c-text); */
 
@@ -122,6 +119,47 @@ menu {
 
 
 
+@media (max-width: 1024px) {
+
+    nav.nav,
+    menu {
+        gap: 2em;
+        gap: 1em;
+    
+        a {
+
+            font-size: 24px;
+            font-size: 20px;
+            /* padding: 0.5em 1em; */
+        
+
+            
+    
+    
+        }    
+    
+    }
+
+}
+
+
+
+
+
+
+
+section {
+    /* border: 2px solid black;  */
+    background-color: var(--c-bg);
+    color: var(--c-text);
+
+    padding-inline: 3em;
+    /* padding-inline: 6em; */
+    /* padding-block: 3em;*/
+    padding-block: 6em;
+
+}
+
 
 
 
@@ -154,9 +192,6 @@ menu {
         line-height: 1;
         margin-bottom: 20px;
         text-transform: uppercase;
-
-        
-
     }
 
     p {
@@ -171,32 +206,20 @@ menu {
 
 
 
-section {
-    background-color: var(--c-bg);
-    color: var(--c-text);
-
-
-    padding-inline: 3em;
-    padding-inline: 6em;
-    /* padding-block: 3em;*/
-    padding-block: 6em;
 
 
 
 
 
-}
 
-
-
-.grid {
+.grid___NOT_LEGACY {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     /* margin: 20px; */
 }
 
-.grid-item {
+.grid-item___NOT_LEGACY {
     border: 3px solid #000;
     padding: 20px;
     font-size: 24px;
@@ -205,7 +228,7 @@ section {
     color: var(--c-text);
 }
 
-.cta {
+.cta___NOT_LEGACY {
     background: #0000ff;
     color: #fff;
     padding: 20px;
@@ -238,6 +261,10 @@ section {
 
 
 
+
+
+
+
 /*
  * GALLERY 
  */
@@ -255,12 +282,10 @@ section {
     transform: rotate(-1deg); */
      /* COOL */
 
-}
-
+} /* gallery */
 
     .gallery-item {
         overflow: hidden; /* ??? */
-
         /* padding: 4em; */
         background-color: var(--c-bg-alt); /* AS FOUC PLACEHOLDER */
         /* */ color: var(--c-text); 
@@ -303,9 +328,6 @@ section {
 
 
 
-
-
-
 .glitch-section {
     /* padding: 100px 20px; */
     /* background: var(--secondary-color); */
@@ -321,10 +343,9 @@ section {
 .glitch {
     position: relative;
     font-size: 80px;
+    line-height: 1em; 
     animation: glitch 1s infinite;
 }
-
-
 
 
 @keyframes glitch {
@@ -332,6 +353,9 @@ section {
     4%, 60% { transform: translate(-2px,0) skew(0deg); }
     62% { transform: translate(0,0) skew(5deg); }
 }
+
+
+
 
 .brutal-form {
     /* padding: 40px; */
@@ -347,14 +371,6 @@ section {
     color: var(--c-text);
 
     /* border: 5px solid var(--c-text); */
-
-
-
-
-
-
-
-
 }
 
 
@@ -552,8 +568,10 @@ marquee /* ,
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     gap: 4em;
+    /*
     max-width: 1200px;
     margin: 0 auto;
+    */
 }
 
 .staff-card {
@@ -618,8 +636,10 @@ marquee /* ,
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
         gap: 4em;
+        /*
         max-width: 1200px;
         margin: 0 auto;
+        */
     }
     
     .map-container {
@@ -694,6 +714,34 @@ marquee /* ,
 
 
 
+
+
+    hgroup {
+        /* border: 3px solid red;  */
+
+        h2 {
+            text-align:center; /* TEMP, UNTIL FLEX OF THE HGROUP */
+
+        }
+
+        p { /* aka ".newsletter-text" */
+            font-size: 1.618em;
+            margin: 2rem 0;
+            font-weight: 700;
+
+
+            text-align:center; /* TEMP, UNTIL FLEX OF THE HGROUP */
+        }
+
+
+
+    } /* hgroup */
+
+
+
+
+
+
 /*
  * NEWSLETTER 
  */
@@ -705,18 +753,24 @@ marquee /* ,
         overflow: hidden;
     }
     
+
+
+
     .newsletter-container {
         max-width: 800px;
         margin: 0 auto;
         text-align: center;
     }
     
+
+    /*
     .newsletter-text {
         font-size: 1.618em;
         margin: 2rem 0;
         font-weight: 700;
     }
-    
+    */
+
     .newsletter-form {
         background: var(--c-bg);
         padding: 2rem;
@@ -729,34 +783,40 @@ marquee /* ,
         display: flex;
         gap: 1rem;
         margin-bottom: 1rem;
-    }
+
+        input {
+            flex: 1;
+            padding: 1rem;
+            border: var(--border-width) var(--border-style) var(--border-color);
+            border-radius: var(--border-radius);
+            font-family: var(--ff);
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            background: var(--c-accent);
+            border: var(--border-width) var(--border-style) var(--border-color);
+            border-radius: var(--border-radius);
+            font-family: var(--ff);
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: translate(-2px, -2px);
+                box-shadow: 4px 4px var(--border-color);
+            }
+      
+        } 
+
+ 
+    } /* input-group */
+
     
-    .input-group input {
-        flex: 1;
-        padding: 1rem;
-        border: var(--border-width) var(--border-style) var(--border-color);
-        border-radius: var(--border-radius);
-        font-family: var(--ff);
-        font-size: 1em;
-        font-weight: 600;
-    }
     
-    .input-group button {
-        padding: 1rem 2rem;
-        background: var(--c-accent);
-        border: var(--border-width) var(--border-style) var(--border-color);
-        border-radius: var(--border-radius);
-        font-family: var(--ff);
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.2s ease;
-    }
-    
-    .input-group button:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 4px 4px var(--border-color);
-    }
-    
+
     .newsletter-disclaimer {
         font-size: 0.8em;
         opacity: 0.8;
@@ -770,6 +830,13 @@ marquee /* ,
     }
 
 
+
+
+
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
 
 
@@ -790,8 +857,10 @@ marquee /* ,
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
+        /*
         max-width: 1200px;
         margin: 0 auto;
+        */
     }
     
     .founder-image {
@@ -932,6 +1001,7 @@ marquee /* ,
     }
     
     /* Optional: Scroll Progress Indicator */
+    /*
     .scroll-indicator {
         position: fixed;
         right: 20px;
@@ -955,6 +1025,9 @@ marquee /* ,
         background: var(--c-accent);
         transform: scale(1.5);
     }
+    */
+
+
     /*
     @media (max-width: 768px) {
         .snap-section {
@@ -1067,9 +1140,12 @@ marquee /* ,
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    /* gap: 2rem; */
+    gap: 4em;
+    /*
     max-width: 1200px;
     margin: 0 auto;
+    */
 }
 
 .testimonial-card {
