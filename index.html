@@ -5,6 +5,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://s.w.org/wp-includes/css/dashicons.css">
     <title>A Neobrutalism Demo</title>
     <meta name="description" content="A very simple neobrutalism ui trend demo">
     <meta name="keywords" content="CSS, UI, Design Trend">
@@ -77,6 +78,19 @@ TODO:
                         <a href="#">LIGHT</a>
                         <a href="#">DARK</a>
                     </menu>
+
+                    <div class="header-search">
+                        <button id="search-toggle" class="search-toggle" aria-label="Search">
+                            <span class="dashicons dashicons-search"></span>
+                        </button>
+                        <div id="search-popover" class="search-popover">
+                            <form class="search-form">
+                                <label for="search-field" class="screen-reader-text">Search</label>
+                                <input type="search" id="search-field" placeholder="Search...">
+                                <button type="submit">Go</button>
+                            </form>
+                        </div>
+                    </div>
 
                 </div> <!-- /inner -->
             </div> <!-- /wrapper -->
@@ -432,6 +446,10 @@ TODO:
                 <a href="#">TWITTER</a>
                 <a href="#">BEHANCE</a>
             </div>
+            <div class="footer-item">
+                <h3>CONTACT</h3>
+                <p>123 Brutal Ave<br>Nowhere City<br>Phone: (123) 456-7890<br>Email: info@brutal.example</p>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>© BRUTAL DESIGN 2024</p>
@@ -528,8 +546,16 @@ TODO:
                 dot.classList.toggle('active', dot.dataset.section === sectionId);
             });
         }
-    });    
+    });
 </script>
-    
+
+<script>
+    const searchToggle = document.getElementById('search-toggle');
+    const searchPopover = document.getElementById('search-popover');
+    searchToggle.addEventListener('click', () => {
+        searchPopover.classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>

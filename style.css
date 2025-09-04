@@ -559,11 +559,11 @@ marquee /* ,
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
 
     /* padding-block: 6em; */
-    padding-block: 4em; 
+    padding-block: 4em;
 }
 
 .footer-item a {
@@ -1303,4 +1303,50 @@ marquee /* ,
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 2rem;
+}
+
+/* Search popover in header */
+.header-search {
+    position: relative;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--c-text);
+    font-size: 24px;
+}
+
+.search-popover {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--c-bg);
+    color: var(--c-text);
+    padding: 1em;
+    box-shadow: var(--box-shadow);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.search-popover.active {
+    display: block;
+}
+
+.search-popover input[type="search"] {
+    padding: 0.5em;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    background: var(--c-bg-alt);
+    color: var(--c-text);
+}
+
+.search-popover button {
+    margin-left: 0.5em;
+    padding: 0.5em 1em;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    background: var(--c-bg-alt);
+    color: var(--c-text);
+    cursor: pointer;
 }
