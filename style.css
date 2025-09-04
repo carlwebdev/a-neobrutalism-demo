@@ -1281,3 +1281,26 @@ marquee /* ,
     display: inline-block;
     transform: rotate(-2deg);
 }
+
+/*
+ * LOCATIONS
+ */
+
+.locations-section {
+    padding: 4rem 2rem;
+    background: var(--c-bg);
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.location-card {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
