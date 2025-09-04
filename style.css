@@ -653,6 +653,48 @@ marquee /* ,
     }
 
 
+/*
+ * SERVICES
+ */
+
+.services-section {
+    padding: 4rem 2rem;
+    background: var(--c-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4em;
+}
+
+.service-card {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px var(--border-color);
+}
+
+.service-title {
+    font-size: 1.618em;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--c-text);
+}
+
+.service-desc {
+    font-size: 1em;
+    color: var(--c-text);
+}
+
+
 
 
 
