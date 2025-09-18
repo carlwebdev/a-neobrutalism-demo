@@ -1690,11 +1690,29 @@ marquee /* ,
 }
 
 .search-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    padding: 0.75em;
+    background: var(--c-bg-alt);
     color: var(--c-text);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-toggle:hover,
+.search-toggle:focus-visible {
+    transform: translate(-5px, -5px);
+}
+
+.search-toggle .dashicons {
     font-size: 24px;
+    line-height: 1;
 }
 
 .search-popover {
