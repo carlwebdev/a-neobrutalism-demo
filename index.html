@@ -60,12 +60,12 @@ TODO:
 
                     <img class="logo" src="img/logoipsum-332.svg" alt="Brutal Design Logo">
                     <nav class="nav">
-                        <!-- 
+                        <!--
                         <a href="#">HOME</a>
                         <a href="#">ABOUT</a>
                         <a href="#">WORK</a>
                         <a href="#">CONTACT</a>
-                        -->  
+                        -->
                         <a href="#">Story</a>
                         <a href="#">Staff</a>
                         <a href="#services">Services</a>
@@ -74,6 +74,11 @@ TODO:
 
 
                     </nav>
+                    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+                        <span class="menu-toggle__bar"></span>
+                        <span class="menu-toggle__bar"></span>
+                        <span class="menu-toggle__bar"></span>
+                    </button>
                     <menu class="">
                         <a href="#">LIGHT</a>
                         <a href="#">DARK</a>
@@ -557,5 +562,49 @@ TODO:
     });
 </script>
 
+    <script>
+        (function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav');
+            const body = document.body;
+            if (!menuToggle || !nav) {
+                return;
+            }
+
+            const updateAria = (isOpen) => {
+                menuToggle.setAttribute('aria-expanded', String(isOpen));
+                menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            };
+
+            menuToggle.addEventListener('click', () => {
+                const isOpen = body.classList.toggle('menu-open');
+                updateAria(isOpen);
+            });
+
+            nav.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (!body.classList.contains('menu-open')) {
+                        return;
+                    }
+                    body.classList.remove('menu-open');
+                    updateAria(false);
+                });
+            });
+
+            const mediaQuery = window.matchMedia('(min-width: 769px)');
+            const handleWidthChange = (event) => {
+                if (event.matches && body.classList.contains('menu-open')) {
+                    body.classList.remove('menu-open');
+                    updateAria(false);
+                }
+            };
+
+            if (mediaQuery.addEventListener) {
+                mediaQuery.addEventListener('change', handleWidthChange);
+            } else {
+                mediaQuery.addListener(handleWidthChange);
+            }
+        })();
+    </script>
 </body>
 </html>
