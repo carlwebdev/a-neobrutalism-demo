@@ -280,11 +280,11 @@ nav.nav a:hover {
         display: inline-flex;
         margin-left: auto;
     }
-
+    /*
     .header-search {
         display: none;
     }
-
+    */
     .nav-group {
         position: absolute;
         top: calc(100% + 1rem);
@@ -328,7 +328,15 @@ nav.nav a:hover {
 }
 
 
+@media (max-width: 768px) {
 
+    .header-search {
+        display: none;
+    }
+
+
+
+}
 
 
 
@@ -538,14 +546,12 @@ section {
  */
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6em;
-
-
     /* background: var(--c-bg-alt); */
 
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 6em; */
+    gap: 3em;
 
     /*
     padding-inline: 6em; 
@@ -863,8 +869,9 @@ marquee /* ,
 .staff-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    gap: 4em;
+    /* gap: 2rem; */
+    /* gap: 4em; */
+    gap: 3em; /* VARIABLE FOR GRID GAP */
     /*
     max-width: 1200px;
     margin: 0 auto;
@@ -885,7 +892,7 @@ marquee /* ,
         box-shadow: 10px 10px var(--border-color);
     }
 
-}
+} /* staff-card */
 
 
 
@@ -922,12 +929,15 @@ marquee /* ,
         color: var(--c-link);
         text-decoration: none;
         word-break: break-all;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }      
+
     }
 
-    .staff-email:hover,
-    .staff-email:focus {
-        text-decoration: underline;
-    }
+
 
     .staff-socials {
         display: flex;
@@ -949,13 +959,20 @@ marquee /* ,
         color: var(--c-text);
         text-decoration: none;
         transition: transform 0.2s ease;
+        
+        &:hover,
+        &:focus {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px var(--border-color);
+        }
+
     }
 
-    .staff-socials a:hover,
-    .staff-socials a:focus {
-        transform: translate(-2px, -2px);
-        box-shadow: 4px 4px var(--border-color);
-    }
+
+
+
+
+
 
 
 /*
@@ -971,6 +988,7 @@ marquee /* ,
     display: grid;
     grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
     gap: 4rem;
+    gap: 3rem;
     align-items: stretch;
 }
 
@@ -1103,6 +1121,14 @@ marquee /* ,
 }
 
 
+
+
+
+
+
+
+
+
 /*
  * SERVICES
  */
@@ -1185,6 +1211,11 @@ marquee /* ,
     box-shadow: 8px 8px var(--border-color);
 }
 
+
+
+
+
+
 .products-grid {
     display: grid;
     gap: 3rem;
@@ -1216,7 +1247,7 @@ marquee /* ,
     padding: 0.35rem 0.75rem;
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: 100vmax;
-    background: var(--c-bg);
+    /* background: var(--c-bg); */
 }
 
 .product-price {
@@ -1551,6 +1582,7 @@ marquee /* ,
         margin-top: 4rem;
     }
     
+    /* item vs card, notrealy a card ... */
     .stat-item {
         text-align: center;
         padding: 2rem;
@@ -1559,27 +1591,39 @@ marquee /* ,
         border-radius: var(--border-radius);
     }
     
-    .stat-number {
-        display: block;
-        font-size: 2.618em;
-        font-weight: 800;
-        color: var(--c-text);
-    }
+        .stat-number {
+            display: block;
+            font-size: 2.618em;
+            font-weight: 800;
+            color: var(--c-text);
+        }
+        
+        .stat-label {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+ 
     
-    .stat-label {
-        display: block;
-        margin-top: 0.5rem;
-        font-weight: 600;
-    }
-    
-    @media (max-width: 768px) {
+
+
+
+
+    @media (max-width: 1024px) {
+
         .about-grid {
             grid-template-columns: 1fr;
         }
         
+    }
+    
+
+    @media (max-width: 768px) {
+  
         .stats-grid {
             grid-template-columns: 1fr;
         }
+
     }
 
 
@@ -1624,7 +1668,14 @@ marquee /* ,
         scroll-snap-align: start;
         /* scroll-snap-stop: always; */
         position: relative;
-        overflow: hidden;
+        /*
+        
+        
+        overflow: hidden; - commneted so that hedaer nav dropdown could be shown ... 
+
+
+
+        */
     }
     
     /* Optional: Scroll Progress Indicator */
@@ -1888,10 +1939,15 @@ marquee /* ,
     background: var(--c-bg);
 }
 
+
+
+
+
 .locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    /* gap: 2rem; */
+    gap: 3rem; /* CREATE CSS CUSTOM PROPERTY GAP DESKTOP FOR EXAMPLE ... or just gap, then have other modifiers for tablet and mobile */
 }
 
 .location-card {
