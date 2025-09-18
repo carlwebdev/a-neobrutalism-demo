@@ -175,6 +175,18 @@ header {
         top: 0;
         z-index: 10;
     }
+
+    body {
+        scroll-snap-type: none;
+        overflow: auto;
+    }
+
+    .snap-container {
+        height: auto;
+        padding-top: 0;
+        overflow: visible;
+        scroll-snap-type: none;
+    }
 }
 
 
