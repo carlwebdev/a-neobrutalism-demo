@@ -89,9 +89,8 @@ header {
     .inner {
         display: flex;
         justify-content: space-between;
-        justify-content: flex-end;
         align-items: center;
-        gap: 4em; /* PRECAUTION */
+        gap: 2.5em;
         flex-wrap: wrap; /* PRECAUTION */
         position: relative;
 
@@ -249,31 +248,18 @@ menu {
 
 @media (max-width: 1024px) {
 
-    nav.nav,
-    menu {
-        gap: 2em;
-        gap: 1em;
-    
-        a {
-
-            font-size: 24px;
-            font-size: 20px;
-            /* padding: 0.5em 1em; */
-        
-
-            
-    
-    
-        }    
-    
+    header .inner {
+        flex-wrap: nowrap;
+        gap: 1.5em;
     }
 
-}
-
-@media (max-width: 768px) {
     .nav-toggle {
         display: inline-flex;
         margin-left: auto;
+    }
+
+    .header-search {
+        display: none;
     }
 
     .nav-group {
