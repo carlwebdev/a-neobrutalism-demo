@@ -208,6 +208,12 @@ section {
     /* background: #ff0000; */
     /* background: #212121; */
     background-color: var(--c-bg);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('img/hero-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: var(--c-text);
 
 
