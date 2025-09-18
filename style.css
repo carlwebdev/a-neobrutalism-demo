@@ -69,7 +69,7 @@ body.dark-mode {
 
 
 body {
-    background: var(--c-text); /* ??? */
+    background: var(--c-bg);
     font-family: var(--ff);
     font-weight: bold;
     /*
