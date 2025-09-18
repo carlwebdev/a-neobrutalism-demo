@@ -60,7 +60,14 @@ TODO:
                 <div class="inner">
 
                     <img class="logo" src="img/logoipsum-332.svg" alt="Brutal Design Logo">
-                    <nav class="nav">
+                    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                        <span class="nav-toggle__bar"></span>
+                        <span class="nav-toggle__bar"></span>
+                        <span class="nav-toggle__bar"></span>
+                        <span class="screen-reader-text">Toggle navigation</span>
+                    </button>
+                    <div class="nav-group" id="primary-navigation">
+                        <nav class="nav">
                         <!-- 
                         <a href="#">HOME</a>
                         <a href="#">ABOUT</a>
@@ -74,11 +81,12 @@ TODO:
                         <a href="#">Testimonials</a>
 
 
-                    </nav>
-                    <menu class="">
+                        </nav>
+                        <menu class="">
                         <a href="#">LIGHT</a>
                         <a href="#">DARK</a>
-                    </menu>
+                        </menu>
+                    </div>
 
                     <div class="header-search">
                         <button id="search-toggle" class="search-toggle" aria-label="Search">
@@ -763,5 +771,15 @@ TODO:
     });
 </script>
 
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navGroup = document.querySelector('.nav-group');
+
+        navToggle?.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navGroup?.classList.toggle('open', !expanded);
+        });
+    </script>
 </body>
 </html>
