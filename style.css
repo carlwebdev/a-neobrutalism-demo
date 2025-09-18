@@ -101,6 +101,65 @@ header {
 
 }
 
+/*
+ * VIDEO
+ */
+
+.video-section {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+}
+
+.video-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4em;
+    align-items: center;
+}
+
+.video-copy {
+    display: grid;
+    gap: 1.5em;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    text-transform: uppercase;
+}
+
+.video-frame {
+    position: relative;
+    background-color: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.video-frame::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 2px dashed var(--border-color);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.video-frame iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+@media (max-width: 900px) {
+    .video-content {
+        grid-template-columns: 1fr;
+    }
+
+    .video-copy {
+        text-align: center;
+    }
+}
+
+
 @media (max-width: 768px) {
     header {
         position: sticky;
