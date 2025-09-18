@@ -532,8 +532,20 @@ section {
 .glitch {
     position: relative;
     font-size: 80px;
-    line-height: 1em; 
+    line-height: 1em;
     animation: glitch 1s infinite;
+}
+
+@media (max-width: 600px) {
+    .glitch,
+    section h2 {
+        font-size: clamp(2.25rem, 10vw, 3.25rem);
+    }
+
+    .about-content h2,
+    .contact-info h2 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
 }
 
 
