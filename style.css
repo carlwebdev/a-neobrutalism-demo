@@ -888,7 +888,7 @@ marquee /* ,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 9rem;
     margin-bottom: 1rem;
     color: var(--c-accent);
 }
