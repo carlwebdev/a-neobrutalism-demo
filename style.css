@@ -30,22 +30,31 @@
     --border-radius: 8px;
     /* --border-radius: 0px; */
     --box-shadow: 5px 5px black;
-    
-    
+
+
 }
 
 
 
-body { 
-    background: var(--c-text); /* ??? */
+body {
+    background: var(--c-bg);
     font-family: var(--ff);
     font-weight: bold;
     /*
     color: var(--c-bg);
     color: black;
     */
-    color: var(--c-text);    
+    color: var(--c-text);
     line-height: 1.6;
+}
+
+body.theme-dark {
+    --c-text: #f4f4f0;
+    --c-bg: #1b1733;
+    --c-bg-alt: #312a54;
+    --c-accent: #ffef5c;
+    --border-color: #f4f4f0;
+    --box-shadow: 5px 5px #f4f4f0;
 }
 
 
@@ -128,6 +137,46 @@ menu {
 
     }    
 
+}
+
+.theme-toggle {
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: 100vh;
+    background: var(--c-bg-alt);
+    color: var(--c-text);
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    box-shadow: var(--box-shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.theme-toggle:focus {
+    outline: 3px solid var(--c-accent);
+    outline-offset: 4px;
+}
+
+.theme-toggle:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 0 var(--border-color);
+}
+
+.theme-toggle__icon {
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.theme-toggle[data-theme="dark"] .theme-toggle__icon--sun {
+    display: none;
+}
+
+.theme-toggle[data-theme="light"] .theme-toggle__icon--moon {
+    display: none;
 }
 
 

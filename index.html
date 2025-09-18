@@ -75,8 +75,10 @@ TODO:
 
                     </nav>
                     <menu class="">
-                        <a href="#">LIGHT</a>
-                        <a href="#">DARK</a>
+                        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme="light">
+                            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+                            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+                        </button>
                     </menu>
 
                     <div class="header-search">
@@ -555,6 +557,50 @@ TODO:
     searchToggle.addEventListener('click', () => {
         searchPopover.classList.toggle('active');
     });
+</script>
+
+<script>
+    (function () {
+        const STORAGE_KEY = 'theme-preference';
+        const body = document.body;
+        const toggle = document.getElementById('theme-toggle');
+
+        if (!toggle) {
+            return;
+        }
+
+        const getStoredTheme = () => {
+            try {
+                return localStorage.getItem(STORAGE_KEY);
+            } catch (err) {
+                return null;
+            }
+        };
+
+        const storeTheme = (theme) => {
+            try {
+                localStorage.setItem(STORAGE_KEY, theme);
+            } catch (err) {
+                /* noop */
+            }
+        };
+
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            body.classList.toggle('theme-dark', isDark);
+            toggle.dataset.theme = isDark ? 'dark' : 'light';
+            toggle.setAttribute('aria-pressed', String(isDark));
+        };
+
+        const preferredTheme = getStoredTheme() || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(preferredTheme);
+
+        toggle.addEventListener('click', () => {
+            const nextTheme = body.classList.contains('theme-dark') ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            storeTheme(nextTheme);
+        });
+    })();
 </script>
 
 </body>
