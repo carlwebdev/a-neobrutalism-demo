@@ -973,7 +973,7 @@ TODO:
             themeToggleButton.setAttribute('aria-pressed', useDarkMode.toString());
         };
 
-        const initialTheme = storedTheme || (prefersDarkScheme.matches ? 'dark' : 'light');
+        const initialTheme = storedTheme || 'light';
         applyTheme(initialTheme);
 
         themeToggleButton.addEventListener('click', () => {
@@ -983,12 +983,21 @@ TODO:
             localStorage.setItem('theme', theme);
         });
 
-        prefersDarkScheme.addEventListener('change', (event) => {
-            if (!localStorage.getItem('theme')) {
-                const theme = event.matches ? 'dark' : 'light';
-                applyTheme(theme);
-            }
-        });
+        if (typeof prefersDarkScheme.addEventListener === 'function') {
+            prefersDarkScheme.addEventListener('change', (event) => {
+                if (!localStorage.getItem('theme')) {
+                    const theme = event.matches ? 'dark' : 'light';
+                    applyTheme(theme);
+                }
+            });
+        } else if (typeof prefersDarkScheme.addListener === 'function') {
+            prefersDarkScheme.addListener((event) => {
+                if (!localStorage.getItem('theme')) {
+                    const theme = event.matches ? 'dark' : 'light';
+                    applyTheme(theme);
+                }
+            });
+        }
     }
     </script>
 </body>
