@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Neobrutalism Demo · Styleguide</title>
+    <meta name="description" content="Visual and interface guidelines for the Neobrutalism demo site.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://s.w.org/wp-includes/css/dashicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body class="styleguide-page">
+    <main class="styleguide">
+        <header class="styleguide-intro">
+            <p class="eyebrow">A NEOBRUTALISM DEMO</p>
+            <h1>Digital Styleguide</h1>
+            <p class="lede">A quick reference for the colors, typography, and components that shape the brutal interface. Use these building blocks to keep new pages looking consistent with the rest of the experience.</p>
+            <a class="styleguide-home-link" href="index.html">← Back to the main site</a>
+        </header>
+
+        <section class="styleguide-section" aria-labelledby="palette-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Foundation</p>
+                <h2 id="palette-heading">Color palette</h2>
+                <p>The palette leans into sharp contrasts and electric accents. Each swatch corresponds to a CSS custom property defined in <code>:root</code>.</p>
+            </div>
+            <div class="color-grid">
+                <article class="color-swatch">
+                    <div class="color-sample color-primary"></div>
+                    <div class="color-meta">
+                        <p class="color-name">Primary surface</p>
+                        <p><code>--c-bg</code> · <span>#9C7BFF</span></p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-sample color-secondary"></div>
+                    <div class="color-meta">
+                        <p class="color-name">Secondary surface</p>
+                        <p><code>--c-bg-alt</code> · <span>#00FF9F</span></p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-sample color-accent"></div>
+                    <div class="color-meta">
+                        <p class="color-name">Highlight</p>
+                        <p><code>--c-accent</code> · <span>#F8FF1D</span></p>
+                    </div>
+                </article>
+                <article class="color-swatch">
+                    <div class="color-sample color-ink"></div>
+                    <div class="color-meta">
+                        <p class="color-name">Text / stroke</p>
+                        <p><code>--c-text</code> · <span>#000000</span></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="type-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Voice</p>
+                <h2 id="type-heading">Typography scale</h2>
+                <p>The demo uses <strong>Work Sans</strong> for every headline and label. Stick to bold weights and tight line heights to keep things loud.</p>
+            </div>
+            <div class="type-scale">
+                <div class="type-sample">
+                    <p class="type-label">Display</p>
+                    <h1>NEOBRUTALISM</h1>
+                </div>
+                <div class="type-sample">
+                    <p class="type-label">Section heading</p>
+                    <h2>Raw power moves</h2>
+                </div>
+                <div class="type-sample">
+                    <p class="type-label">Subheading</p>
+                    <h3>Unpolished and unapologetic</h3>
+                </div>
+                <div class="type-sample">
+                    <p class="type-label">Body copy</p>
+                    <p>Keep paragraphs brief and punchy. Use uppercase for emphasis and lean on the accent color for inline highlights.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="component-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Interface</p>
+                <h2 id="component-heading">Core components</h2>
+                <p>Buttons and inputs embrace heavy borders, solid shadows, and minimal polish. Keep their shapes rectangular and let the grid do the alignment.</p>
+            </div>
+            <div class="component-grid">
+                <div class="component-sample">
+                    <p class="type-label">Primary button</p>
+                    <button class="brutal-button">Start something wild</button>
+                </div>
+                <div class="component-sample">
+                    <p class="type-label">Form input</p>
+                    <input class="brutal-input" type="text" placeholder="NAME@EXAMPLE.COM">
+                </div>
+                <div class="component-sample">
+                    <p class="type-label">Card surface</p>
+                    <article class="sample-card">
+                        <h3>Brutal card</h3>
+                        <p>A bold block for staff profiles, product callouts, or any short burst of content.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="guidance-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Usage tips</p>
+                <h2 id="guidance-heading">Keeping it consistent</h2>
+            </div>
+            <ul class="usage-list">
+                <li>Use chunky margins and generous spacing—let components breathe.</li>
+                <li>Stack content inside bold borders and drop shadows to sell the brutalist vibe.</li>
+                <li>Reserve the yellow accent for calls-to-action and animated details.</li>
+                <li>Always provide a contrasting fallback color when placing type over imagery.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="styleguide-footer">
+        <p>© Brutal Design 2024 · <a href="index.html">Return to homepage</a></p>
+    </footer>
+</body>
+</html>
