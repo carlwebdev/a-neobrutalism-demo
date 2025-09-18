@@ -12,6 +12,18 @@ a {
     text-decoration: none;
 }
 
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 
 :root {
     --c-text: #000;
@@ -76,7 +88,8 @@ header {
         align-items: center;
         gap: 4em; /* PRECAUTION */
         flex-wrap: wrap; /* PRECAUTION */
-    
+        position: relative;
+
     }
 
 
@@ -143,6 +156,31 @@ menu {
 
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    background: var(--c-bg-alt);
+    padding: 0.75em;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.nav-toggle__bar {
+    width: 24px;
+    height: 3px;
+    background: var(--c-text);
+    display: block;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
 
 
 @media (max-width: 1024px) {
@@ -166,6 +204,47 @@ menu {
     
     }
 
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: absolute;
+        top: calc(100% + 1rem);
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1em;
+        background: var(--c-bg);
+        padding: 1.5em;
+        border: var(--border-width) var(--border-style) var(--border-color);
+        box-shadow: var(--box-shadow);
+        border-radius: 20px;
+        min-width: min(260px, 80vw);
+        z-index: 20;
+    }
+
+    .nav-group.open {
+        display: flex;
+    }
+
+    nav.nav,
+    menu {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    nav.nav a,
+    menu a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 
