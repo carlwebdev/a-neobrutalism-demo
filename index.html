@@ -365,40 +365,51 @@ TODO:
                 <p>DON'T BELIEVE EVERYTHING THEY SAY</p>
             </hgroup>
 
-            <div class="testimonials-grid">
-                <article class="testimonial-card">
-                    <p class="testimonial-quote">"Their brutal approach to design completely transformed our brand. Bold, unapologetic, and exactly what we needed."</p>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/200" alt="Client" class="author-image">
-                        <div class="author-info">
-                            <div class="author-name">SARAH PARKER</div>
-                            <div class="author-role">CEO, TECH CO</div>
-                        </div>
+            <div class="testimonials-slider">
+                <button class="testimonial-nav prev" type="button" aria-label="Previous testimonial">
+                    <span class="dashicons dashicons-arrow-left-alt2"></span>
+                </button>
+                <div class="testimonials-viewport">
+                    <div class="testimonials-track testimonials-grid">
+                        <article class="testimonial-card">
+                            <p class="testimonial-quote">"Their brutal approach to design completely transformed our brand. Bold, unapologetic, and exactly what we needed."</p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/200" alt="Client" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">SARAH PARKER</div>
+                                    <div class="author-role">CEO, TECH CO</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="testimonial-card">
+                            <p class="testimonial-quote">"Breaking conventions never looked so good. Our website traffic increased by 200% after the redesign."</p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/201" alt="Client" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">MARK JOHNSON</div>
+                                    <div class="author-role">MARKETING DIR</div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="testimonial-card">
+                            <p class="testimonial-quote">"Finally, a design agency that understands the power of raw aesthetics. Outstanding work!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://picsum.photos/202" alt="Client" class="author-image">
+                                <div class="author-info">
+                                    <div class="author-name">LISA ZHANG</div>
+                                    <div class="author-role">CREATIVE LEAD</div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </article>
-        
-                <article class="testimonial-card">
-                    <p class="testimonial-quote">"Breaking conventions never looked so good. Our website traffic increased by 200% after the redesign."</p>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/201" alt="Client" class="author-image">
-                        <div class="author-info">
-                            <div class="author-name">MARK JOHNSON</div>
-                            <div class="author-role">MARKETING DIR</div>
-                        </div>
-                    </div>
-                </article>
-        
-                <article class="testimonial-card">
-                    <p class="testimonial-quote">"Finally, a design agency that understands the power of raw aesthetics. Outstanding work!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/202" alt="Client" class="author-image">
-                        <div class="author-info">
-                            <div class="author-name">LISA ZHANG</div>
-                            <div class="author-role">CREATIVE LEAD</div>
-                        </div>
-                    </div>
-                </article>
+                </div>
+                <button class="testimonial-nav next" type="button" aria-label="Next testimonial">
+                    <span class="dashicons dashicons-arrow-right-alt2"></span>
+                </button>
             </div>
+            <div class="testimonial-dots" aria-label="Testimonial navigation"></div>
 
         </div> <!-- /wrapper -->
     </section>
@@ -554,6 +565,128 @@ TODO:
     const searchPopover = document.getElementById('search-popover');
     searchToggle.addEventListener('click', () => {
         searchPopover.classList.toggle('active');
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.querySelector('.testimonials-slider');
+        const viewport = slider?.querySelector('.testimonials-viewport');
+        const track = slider?.querySelector('.testimonials-track');
+        const prevButton = slider?.querySelector('.testimonial-nav.prev');
+        const nextButton = slider?.querySelector('.testimonial-nav.next');
+        const dotsContainer = document.querySelector('.testimonial-dots');
+
+        if (!slider || !viewport || !track || !prevButton || !nextButton || !dotsContainer) {
+            return;
+        }
+
+        const slides = Array.from(track.children);
+        if (!slides.length) {
+            return;
+        }
+
+        let activeIndex = 0;
+        let isEnabled = false;
+        let dots = [];
+
+        const updateButtons = () => {
+            prevButton.disabled = activeIndex === 0;
+            nextButton.disabled = activeIndex === slides.length - 1;
+            dots.forEach((dot, index) => {
+                const isActive = index === activeIndex;
+                dot.classList.toggle('active', isActive);
+                dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+        };
+
+        const updateTransform = () => {
+            if (!isEnabled) {
+                return;
+            }
+            const viewportWidth = viewport.getBoundingClientRect().width;
+            track.style.transform = `translateX(-${activeIndex * viewportWidth}px)`;
+        };
+
+        const goTo = (index) => {
+            activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+            updateTransform();
+            updateButtons();
+        };
+
+        const buildDots = () => {
+            dotsContainer.innerHTML = '';
+            dots = slides.map((_, index) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'testimonial-dot';
+                dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
+                dot.addEventListener('click', () => goTo(index));
+                dotsContainer.appendChild(dot);
+                return dot;
+            });
+        };
+
+        const enable = () => {
+            if (isEnabled) {
+                return;
+            }
+            isEnabled = true;
+            track.style.transition = 'transform 0.4s ease';
+            buildDots();
+            goTo(0);
+        };
+
+        const disable = () => {
+            if (!isEnabled) {
+                return;
+            }
+            isEnabled = false;
+            track.style.transform = '';
+            track.style.transition = '';
+            dotsContainer.innerHTML = '';
+            dots = [];
+            prevButton.disabled = false;
+            nextButton.disabled = false;
+        };
+
+        prevButton.addEventListener('click', () => {
+            if (!isEnabled) {
+                return;
+            }
+            goTo(activeIndex - 1);
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (!isEnabled) {
+                return;
+            }
+            goTo(activeIndex + 1);
+        });
+
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+        const handleChange = (event) => {
+            if (event.matches) {
+                enable();
+            } else {
+                disable();
+            }
+        };
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handleChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(handleChange);
+        }
+
+        handleChange(mediaQuery);
+
+        window.addEventListener('resize', () => {
+            if (isEnabled) {
+                updateTransform();
+            }
+        });
     });
 </script>
 

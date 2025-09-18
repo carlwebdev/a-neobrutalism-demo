@@ -1223,6 +1223,51 @@ marquee /* ,
     */
 }
 
+.testimonials-slider {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.testimonials-viewport {
+    flex: 1;
+}
+
+.testimonials-track {
+    width: 100%;
+}
+
+.testimonial-nav {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    background: var(--c-accent);
+    color: var(--c-text);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.testimonial-nav:hover:not(:disabled) {
+    transform: translate(-5px, -5px);
+}
+
+.testimonial-nav:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.testimonial-dots {
+    display: none;
+}
+
 .testimonial-card {
     position: relative;
     padding: 2rem;
@@ -1350,3 +1395,58 @@ marquee /* ,
     color: var(--c-text);
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+    .testimonials-track {
+        display: flex;
+        gap: 0;
+        transition: transform 0.4s ease;
+    }
+
+    .testimonials-track .testimonial-card {
+        flex: 0 0 100%;
+    }
+
+    .testimonials-viewport {
+        overflow: hidden;
+    }
+
+    .testimonials-slider {
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .testimonial-nav {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .testimonial-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .testimonial-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: var(--border-width) var(--border-style) var(--border-color);
+        background: var(--c-bg);
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .testimonial-dot.active {
+        background: var(--c-accent);
+    }
+
+    .testimonial-dot:focus-visible {
+        outline: 3px solid var(--c-accent);
+        outline-offset: 2px;
+    }
+}
+
