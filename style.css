@@ -278,7 +278,6 @@ nav.nav a:hover {
 
     .nav-toggle {
         display: inline-flex;
-        margin-left: auto;
     }
     /*
     .header-search {
@@ -306,8 +305,7 @@ nav.nav a:hover {
         display: flex;
     }
 
-    nav.nav,
-    .theme-toggle {
+    nav.nav {
         flex-direction: column;
         gap: 1em;
     }
@@ -319,11 +317,13 @@ nav.nav a:hover {
     }
 
     .theme-toggle {
-        width: 100%;
+        order: 3;
+        margin-left: auto;
     }
 
-    .theme-toggle__button {
-        width: 100%;
+    .nav-toggle {
+        order: 4;
+        margin-left: 0;
     }
 }
 
