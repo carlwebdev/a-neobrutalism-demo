@@ -52,13 +52,23 @@ a {
     --border-radius: 8px;
     /* --border-radius: 0px; */
     --box-shadow: 5px 5px black;
-    
-    
+
+
+}
+
+
+body.dark-mode {
+    --c-bg: #0f172a;
+    --c-bg-alt: #1f2937;
+    --c-text: #f9fafb;
+    --border-color: #f9fafb;
+    --box-shadow: 5px 5px 0 #f9fafb;
+    color-scheme: dark;
 }
 
 
 
-body { 
+body {
     background: var(--c-text); /* ??? */
     font-family: var(--ff);
     font-weight: bold;
@@ -178,45 +188,46 @@ img.logo {
 
 
 
-nav.nav,
-menu {
+nav.nav {
     display: flex;
     gap: 2em;
     flex-wrap: wrap; /* PRECAUTION */
-    /*  background-color: var(--c-text); */ 
+    /*  background-color: var(--c-text); */
     /* border: 1px solid var(--c-text); */
+}
 
-    a {
-        /*  */ text-decoration: none;
-        /* add this to: how to make any siote trend=brutalis! */
+nav.nav a {
+    /*  */ text-decoration: none;
+    /* add this to: how to make any siote trend=brutalis! */
 
-        font-size: 24px;
-        font-size: 20px;
-        
-        font-weight: bold;
-        padding: 0.5em 1em;
-        background-color: var(--c-bg);
-        background-color: var(--c-bg-alt);
-        /* */ color: var(--c-text); 
-    
-        box-shadow: var(--box-shadow);
-    
-        border: var(--border-width) var(--border-style) var(--border-color); 
-    
-        /* border-radius: var(--border-radius); */
-        border-radius: 100vh;
+    font-size: 24px;
+    font-size: 20px;
 
+    font-weight: bold;
+    padding: 0.5em 1em;
+    background-color: var(--c-bg);
+    background-color: var(--c-bg-alt);
+    /* */ color: var(--c-text);
 
-        transition: transform 0.2s;
-        &:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 5px 5px 0 var(--text-color); /* !!! */
-        } 
-        
+    box-shadow: var(--box-shadow);
+
+    border: var(--border-width) var(--border-style) var(--border-color);
+
+    /* border-radius: var(--border-radius); */
+    border-radius: 100vh;
 
 
-    }    
+    transition: transform 0.2s;
+}
 
+nav.nav a:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 0 var(--border-color);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
 }
 
 .nav-toggle {
@@ -284,16 +295,23 @@ menu {
     }
 
     nav.nav,
-    menu {
+    .theme-toggle {
         flex-direction: column;
         gap: 1em;
     }
 
-    nav.nav a,
-    menu a {
+    nav.nav a {
         display: block;
         width: 100%;
         text-align: center;
+    }
+
+    .theme-toggle {
+        width: 100%;
+    }
+
+    .theme-toggle__button {
+        width: 100%;
     }
 }
 
@@ -382,6 +400,62 @@ section {
     }
 
 
+}
+
+.theme-toggle__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25em;
+    padding: 0.5em 0.75em;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: 999px;
+    background: var(--c-bg-alt);
+    color: var(--c-text);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle__button:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 0 var(--border-color);
+}
+
+.theme-toggle__button:focus-visible {
+    outline: 3px solid var(--c-accent);
+    outline-offset: 4px;
+}
+
+.theme-toggle__icon {
+    font-size: 24px;
+    line-height: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle__icon--sun {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.theme-toggle__icon--moon {
+    opacity: 0;
+    transform: scale(0.6) rotate(-45deg);
+}
+
+.dark-mode .theme-toggle__icon--sun {
+    opacity: 0;
+    transform: scale(0.6) rotate(45deg);
+}
+
+.dark-mode .theme-toggle__icon--moon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.dark-mode .theme-toggle__button {
+    background: var(--c-bg);
+    color: var(--c-text);
 }
 
 
