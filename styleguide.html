@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://s.w.org/wp-includes/css/dashicons.css">
+    <title>Styleguide · A Neobrutalism Demo</title>
+</head>
+<body class="styleguide-page">
+    <header class="styleguide-header">
+        <div class="wrapper full">
+            <div class="styleguide-header-inner">
+                <div>
+                    <p class="eyebrow">REFERENCE</p>
+                    <h1>A Neobrutalism Styleguide</h1>
+                    <p class="lede">A quick overview of the building blocks that power this demo.</p>
+                </div>
+                <a class="back-home brutal-link" href="index.html">← Back to the homepage</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="styleguide-main wrapper">
+        <section class="styleguide-section">
+            <h2>Typography</h2>
+            <div class="component-grid">
+                <article class="component-card">
+                    <p class="component-label">Headings</p>
+                    <h1>Heading One</h1>
+                    <h2>Heading Two</h2>
+                    <h3>Heading Three</h3>
+                    <p>Paragraph text keeps the same bold voice as the rest of the site. <a href="#" class="inline-link">Inline links</a> lean on the accent color for emphasis.</p>
+                </article>
+                <article class="component-card">
+                    <p class="component-label">Lists</p>
+                    <ul>
+                        <li>Keep spacing generous and blocks chunky.</li>
+                        <li>Contrast matters—use the accent color thoughtfully.</li>
+                        <li>Pair bold statements with simple supporting copy.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <h2>Buttons</h2>
+            <div class="component-grid">
+                <article class="component-card">
+                    <p class="component-label">Primary actions</p>
+                    <button type="button" class="brutal-button">Standard Button</button>
+                    <a href="#" class="brutal-button as-link">Anchor Button</a>
+                </article>
+                <article class="component-card">
+                    <p class="component-label">Secondary action</p>
+                    <button type="button" class="brutal-button outline">Ghost Button</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <h2>Disclosure</h2>
+            <div class="component-grid">
+                <article class="component-card">
+                    <p class="component-label">Details &amp; summary</p>
+                    <details open class="brutal-details">
+                        <summary>What does the brutal look aim to achieve?</summary>
+                        <p>It embraces raw edges, unapologetic color palettes, and generous borders. Use it to make interfaces feel loud, tactile, and alive.</p>
+                    </details>
+                    <details class="brutal-details">
+                        <summary>How should spacing be handled?</summary>
+                        <p>Lean into oversized padding and obvious grid systems. The generous breathing room helps each block feel intentional.</p>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section">
+            <h2>Forms</h2>
+            <div class="component-grid">
+                <article class="component-card">
+                    <p class="component-label">Inputs</p>
+                    <form class="styleguide-form">
+                        <label for="sg-name">Name</label>
+                        <input id="sg-name" class="brutal-input" type="text" placeholder="Jane Doe">
+
+                        <label for="sg-email">Email</label>
+                        <input id="sg-email" class="brutal-input" type="email" placeholder="jane@example.com">
+
+                        <label for="sg-services">Service interest</label>
+                        <select id="sg-services" class="brutal-input">
+                            <option>Brand direction</option>
+                            <option>UI overhaul</option>
+                            <option>Experimental prototype</option>
+                        </select>
+
+                        <label for="sg-notes">Project notes</label>
+                        <textarea id="sg-notes" class="brutal-input" rows="4" placeholder="Tell us everything."></textarea>
+
+                        <button type="submit" class="brutal-button">Submit form</button>
+                    </form>
+                </article>
+
+                <article class="component-card">
+                    <p class="component-label">Checkboxes</p>
+                    <fieldset class="styleguide-form">
+                        <legend class="sr-only">Newsletter preferences</legend>
+                        <label class="brutal-checkbox">
+                            <input type="checkbox" checked>
+                            Weekly updates
+                        </label>
+                        <label class="brutal-checkbox">
+                            <input type="checkbox">
+                            Launch announcements
+                        </label>
+                        <label class="brutal-checkbox">
+                            <input type="checkbox" disabled>
+                            VIP waitlist
+                        </label>
+                    </fieldset>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="brutal-footer styleguide-footer">
+        <div class="footer-bottom">
+            <p>© BRUTAL DESIGN 2024 · <a href="index.html">Back home</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1350,3 +1350,226 @@ marquee /* ,
     color: var(--c-text);
     cursor: pointer;
 }
+/* Styleguide page */
+body.styleguide-page {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+}
+
+.styleguide-header {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
+    box-shadow: var(--box-shadow);
+}
+
+.styleguide-header-inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-block: 4rem;
+}
+
+.styleguide-header .eyebrow {
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.styleguide-header .lede {
+    max-width: 36ch;
+    margin-top: 1rem;
+}
+
+.brutal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--c-text);
+    background-color: var(--c-bg-alt);
+    padding: 0.75em 1.5em;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 100vh;
+    transition: transform 0.2s ease;
+}
+
+.brutal-link:hover {
+    transform: translate(-5px, -5px);
+}
+
+.styleguide-main {
+    padding-block: 4rem 6rem;
+}
+
+body.styleguide-page section.styleguide-section {
+    padding: 3rem;
+    margin-bottom: 3rem;
+    background-color: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    box-shadow: var(--box-shadow);
+}
+
+.styleguide-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.component-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 2.5rem;
+}
+
+.component-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.component-label {
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-text);
+}
+
+.inline-link {
+    color: var(--c-accent);
+}
+
+.styleguide-page .brutal-button {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+}
+
+.styleguide-page .brutal-button + .brutal-button {
+    margin-top: 1rem;
+}
+
+.styleguide-page .brutal-button.outline {
+    background-color: var(--c-bg);
+}
+
+.brutal-details {
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--c-bg);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+}
+
+.brutal-details + .brutal-details {
+    margin-top: 1.5rem;
+}
+
+.brutal-details summary {
+    cursor: pointer;
+    font-size: 1.25rem;
+    list-style: none;
+}
+
+.brutal-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.brutal-details summary::after {
+    content: "+";
+    float: right;
+}
+
+.brutal-details[open] summary::after {
+    content: "–";
+}
+
+.brutal-details p {
+    margin-top: 1rem;
+}
+
+.styleguide-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.styleguide-form label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.styleguide-form .brutal-button {
+    align-self: flex-start;
+}
+
+.brutal-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    background-color: var(--c-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+.brutal-checkbox + .brutal-checkbox {
+    margin-top: 1rem;
+}
+
+.brutal-checkbox input {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--c-text);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.styleguide-footer {
+    margin-top: 4rem;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.styleguide-footer .footer-bottom {
+    border-top: var(--border-width) var(--border-style) var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.styleguide-footer a {
+    color: var(--c-text);
+}
+
+@media (max-width: 768px) {
+    .styleguide-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .styleguide-main {
+        padding-block: 3rem 4rem;
+    }
+
+    body.styleguide-page section.styleguide-section {
+        padding: 2rem;
+    }
+}
