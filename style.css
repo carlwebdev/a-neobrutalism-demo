@@ -455,8 +455,10 @@ section {
 
 
 
+#gallery {
+    background: var(--c-bg-alt);
 
-
+ } 
 
 
 /*
@@ -467,6 +469,11 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6em;
+
+
+    /* background: var(--c-bg-alt); */
+
+
 
     /*
     padding-inline: 6em; 
