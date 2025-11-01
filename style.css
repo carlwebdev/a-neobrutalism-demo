@@ -2471,30 +2471,85 @@ body.staff-page {
     text-transform: uppercase;
 }
 
-.component-grid {
+.component-showcase {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.component-sample {
+.component-card {
+    display: grid;
+    gap: 0.75rem;
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.75rem;
+    box-shadow: var(--box-shadow);
+    text-transform: none;
+}
+
+.component-card--wide {
+    grid-column: 1 / -1;
+}
+
+.component-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.component-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.component-preview {
+    display: grid;
+    gap: 1rem;
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.component-preview--flush {
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.component-preview--padded {
+    padding: 2rem;
+}
+
+.control-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.control-stack {
     display: grid;
     gap: 1rem;
 }
 
-.styleguide .brutal-button,
-.styleguide .brutal-input {
-    width: 100%;
-    max-width: 320px;
+.styleguide-about-content {
+    display: grid;
+    gap: 1.25rem;
 }
 
-.sample-card {
-    background: var(--c-bg-alt);
-    border: var(--border-width) var(--border-style) var(--border-color);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: var(--box-shadow);
-    text-transform: none;
+.styleguide-stats-grid {
+    margin-top: 2rem;
+}
+
+.styleguide-dot-nav {
+    gap: 1rem;
+}
+
+.styleguide-scroll-indicator {
+    gap: 0.75rem;
 }
 
 .usage-list {
@@ -2518,6 +2573,126 @@ body.staff-page {
     text-decoration: underline;
 }
 
+.styleguide .styleguide-header-demo {
+    position: static;
+    padding-block: 2rem;
+}
+
+.styleguide .styleguide-header-demo .wrapper.full {
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.styleguide .styleguide-header-demo .inner {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.styleguide .styleguide-header-demo .nav-group {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    background: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    min-width: 0;
+}
+
+.styleguide .styleguide-header-demo .header-search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.styleguide .styleguide-header-demo .search-popover {
+    position: static;
+    display: block;
+}
+
+.styleguide .styleguide-header-demo .search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.styleguide .styleguide-header-demo .search-form input[type="search"] {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.styleguide .dot-nav {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+
+.styleguide .dot {
+    box-shadow: var(--box-shadow);
+}
+
+.styleguide .scroll-indicator {
+    display: flex;
+    align-items: center;
+}
+
+.styleguide .scroll-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    background: var(--c-bg);
+    box-shadow: var(--box-shadow);
+}
+
+.styleguide .scroll-dot.active {
+    background: var(--c-accent);
+}
+
+.styleguide .styleguide-hero {
+    height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.styleguide .styleguide-hero .wrapper.full {
+    padding-top: 0;
+    padding-inline: clamp(2rem, 6vw, 4rem);
+}
+
+.styleguide .styleguide-video .wrapper {
+    max-width: 100%;
+}
+
+.styleguide .styleguide-testimonial-demo {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.styleguide .styleguide-testimonial-demo .testimonials-viewport {
+    overflow: visible;
+}
+
+.styleguide .testimonial-nav {
+    display: inline-flex;
+}
+
+.styleguide .staff-hero .wrapper,
+.styleguide .contact-grid,
+.styleguide .services-grid,
+.styleguide .products-grid,
+.styleguide .locations-grid {
+    gap: 2rem;
+}
+
 @media (max-width: 720px) {
     .styleguide {
         padding-inline: 1.5rem;
@@ -2526,5 +2701,9 @@ body.staff-page {
     .styleguide-section,
     .styleguide-intro {
         padding: 2rem;
+    }
+
+    .component-card {
+        padding: 1.5rem;
     }
 }
