@@ -2373,38 +2373,6 @@ body.locations-page {
     }
     */
 /* OBS - THIS COMMENT WASNT BEING APLIED YET TO GITHUB AGES REPO */
-
-
-
-
-    .dot-nav {
-        position: fixed;
-        right: 2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .dot {
-        width: 12px;
-        height: 12px;
-        background: var(--c-bg);
-        border: 2px solid var(--c-text);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
-    
-    .dot.active {
-        background: var(--c-accent);
-        transform: scale(1.5);
-    }
-
-
-
-
     html, body {
         margin: 0;
         padding: 0;
@@ -2966,10 +2934,6 @@ body.locations-page {
     margin-top: 2rem;
 }
 
-.styleguide-dot-nav {
-    gap: 1rem;
-}
-
 .styleguide-scroll-indicator {
     gap: 0.75rem;
 }
@@ -3044,19 +3008,6 @@ body.locations-page {
 .styleguide .styleguide-header-demo .search-form input[type="search"] {
     flex: 1 1 auto;
     min-width: 0;
-}
-
-.styleguide .dot-nav {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.75rem;
-}
-
-.styleguide .dot {
-    box-shadow: var(--box-shadow);
 }
 
 .styleguide .scroll-indicator {
