@@ -3132,3 +3132,315 @@ body.about-page {
         padding-left: 0;
     }
 }
+
+/*
+ * SERVICES PAGE
+ */
+
+body.services-page {
+    background: var(--c-bg);
+    color: var(--c-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.services-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 6vw, 6rem);
+}
+
+.services-hero {
+    background: var(--c-bg-alt);
+    border-block: var(--border-width) var(--border-style) var(--border-color);
+    padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.services-hero .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.services-hero__copy {
+    display: grid;
+    gap: 1rem;
+    text-transform: uppercase;
+}
+
+.services-hero__copy h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.services-hero__copy .lede {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    text-transform: none;
+}
+
+.services-hero__meta {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: var(--box-shadow);
+}
+
+.services-hero__meta dl {
+    display: grid;
+    gap: 1rem;
+}
+
+.services-hero__meta dt {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.services-overview {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.services-overview .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.services-section-heading {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 720px;
+}
+
+.services-section-heading p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.services-grid--detailed .service-desc {
+    margin-bottom: 1rem;
+}
+
+.service-highlights {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    list-style: square inside;
+}
+
+.services-process {
+    background: var(--c-bg);
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.services-process .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.process-steps {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    list-style: none;
+    counter-reset: step;
+}
+
+.process-steps li {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.process-steps h3 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    text-transform: uppercase;
+}
+
+.process-steps p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.services-packages {
+    background: var(--c-bg-alt);
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.services-packages .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.package-grid {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.package-card {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    display: grid;
+    gap: 1rem;
+}
+
+.package-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    gap: 0.75rem;
+}
+
+.package-label {
+    font-weight: 800;
+}
+
+.package-price {
+    font-weight: 700;
+}
+
+.package-card ul {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    list-style: square inside;
+}
+
+.services-cases {
+    background: var(--c-bg);
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.services-cases .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.case-grid {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.case-card {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.case-card h3 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    text-transform: uppercase;
+}
+
+.case-meta {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.case-card ul {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    list-style: square inside;
+}
+
+.services-faq {
+    background: var(--c-bg);
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.services-faq .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.faq-grid {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.faq-item {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.faq-item h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    text-transform: uppercase;
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.services-cta {
+    background: var(--c-bg-alt);
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.services-cta .wrapper {
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.services-cta__panel {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(2rem, 5vw, 3rem);
+    display: grid;
+    gap: 1rem;
+    max-width: 640px;
+}
+
+@media (max-width: 640px) {
+    .services-section-heading {
+        max-width: 100%;
+    }
+
+    .services-cta__panel,
+    .package-card,
+    .case-card,
+    .faq-item {
+        text-align: left;
+    }
+
+    .brutal-button--inline {
+        width: 100%;
+    }
+}
+
