@@ -1377,6 +1377,223 @@ body.contact-page {
     font-weight: 700;
 }
 
+/*
+ * LOCATIONS PAGE
+ */
+
+body.locations-page {
+    background: var(--c-bg);
+    color: var(--c-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.locations-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 6vw, 6rem);
+}
+
+.locations-hero {
+    background: var(--c-bg-alt);
+    border-block: var(--border-width) var(--border-style) var(--border-color);
+    padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.locations-hero .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.locations-hero__copy {
+    display: grid;
+    gap: 1rem;
+    text-transform: uppercase;
+}
+
+.locations-hero__copy h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.locations-hero__copy .lede {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    text-transform: none;
+}
+
+.locations-hero__meta {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: var(--box-shadow);
+}
+
+.locations-hero__meta dl {
+    display: grid;
+    gap: 1rem;
+}
+
+.locations-hero__meta dt {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.locations-grid-section {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.locations-grid-section .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.locations-grid .location-card {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.locations-grid .location-card header {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.locations-grid .location-card h3 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    text-transform: uppercase;
+}
+
+.location-neighborhood {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.locations-grid address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.location-contact {
+    display: grid;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.location-features {
+    list-style: disc;
+    margin-left: 1.25rem;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.locations-experiences {
+    padding-block: clamp(4rem, 8vw, 6rem);
+    background: var(--c-bg);
+}
+
+.locations-experiences .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.experience-card {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.experience-card h3 {
+    text-transform: uppercase;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.experience-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.experience-card ul {
+    list-style: disc;
+    margin-left: 1.25rem;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.locations-travel {
+    padding-block: clamp(4rem, 8vw, 6rem);
+    background: var(--c-bg-alt);
+    border-block: var(--border-width) var(--border-style) var(--border-color);
+}
+
+.locations-travel .wrapper {
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.travel-card {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.travel-card h2,
+.travel-card h3 {
+    text-transform: uppercase;
+}
+
+.travel-card--tips ul {
+    list-style: disc;
+    margin-left: 1.25rem;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.travel-card--tips li {
+    line-height: 1.6;
+}
+
 .page-footer {
     margin-top: auto;
     background: var(--c-bg);
