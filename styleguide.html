@@ -79,31 +79,536 @@
                     <p class="type-label">Body copy</p>
                     <p>Keep paragraphs brief and punchy. Use uppercase for emphasis and lean on the accent color for inline highlights.</p>
                 </div>
+                <div class="type-sample">
+                    <p class="type-label">Glitch headline</p>
+                    <h2 class="glitch" data-text="SERVICES">SERVICES</h2>
+                </div>
+                <div class="type-sample">
+                    <p class="type-label">Eyebrow label</p>
+                    <p class="eyebrow">FROM THE FOUNDER</p>
+                </div>
             </div>
         </section>
 
-        <section class="styleguide-section" aria-labelledby="component-heading">
+        <section class="styleguide-section" aria-labelledby="nav-heading">
             <div class="styleguide-section__header">
                 <p class="eyebrow">Interface</p>
-                <h2 id="component-heading">Core components</h2>
-                <p>Buttons and inputs embrace heavy borders, solid shadows, and minimal polish. Keep their shapes rectangular and let the grid do the alignment.</p>
+                <h2 id="nav-heading">Navigation &amp; controls</h2>
+                <p>The header blends logo, navigation, theming, and search into a compact block with heavy borders. Supporting controls keep global wayfinding consistent across breakpoints.</p>
             </div>
-            <div class="component-grid">
-                <div class="component-sample">
-                    <p class="type-label">Primary button</p>
-                    <button class="brutal-button">Start something wild</button>
-                </div>
-                <div class="component-sample">
-                    <p class="type-label">Form input</p>
-                    <input class="brutal-input" type="text" placeholder="NAME@EXAMPLE.COM">
-                </div>
-                <div class="component-sample">
-                    <p class="type-label">Card surface</p>
-                    <article class="sample-card">
-                        <h3>Brutal card</h3>
-                        <p>A bold block for staff profiles, product callouts, or any short burst of content.</p>
-                    </article>
-                </div>
+            <div class="component-showcase">
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Primary header</h3>
+                    <p class="component-description">Logo, menu, theme toggle, and quick search all sit inside a stacked flex layout. On narrow screens the nav toggle reveals the menu.</p>
+                    <div class="component-preview component-preview--flush">
+                        <header class="fixed-header styleguide-header-demo">
+                            <div class="wrapper full">
+                                <div class="inner">
+                                    <img class="logo" src="img/logoipsum-332.svg" alt="Brutal Design logo">
+                                    <button class="nav-toggle" aria-expanded="false" aria-controls="styleguide-navigation">
+                                        <span class="nav-toggle__bar"></span>
+                                        <span class="nav-toggle__bar"></span>
+                                        <span class="nav-toggle__bar"></span>
+                                        <span class="screen-reader-text">Toggle navigation</span>
+                                    </button>
+                                    <div class="nav-group open" id="styleguide-navigation">
+                                        <nav class="nav">
+                                            <a href="index.html#about">Story</a>
+                                            <a href="staff.html">Staff</a>
+                                            <a href="index.html#services">Services</a>
+                                            <a href="index.html#contact">Contact</a>
+                                            <a href="index.html#testimonials">Testimonials</a>
+                                        </nav>
+                                    </div>
+                                    <div class="theme-toggle">
+                                        <button class="theme-toggle__button" aria-label="Toggle dark mode" aria-pressed="false">
+                                            <span class="material-symbols-outlined theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">light_mode</span>
+                                            <span class="material-symbols-outlined theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">dark_mode</span>
+                                        </button>
+                                    </div>
+                                    <div class="header-search">
+                                        <button class="search-toggle" aria-label="Search">
+                                            <span class="dashicons dashicons-search"></span>
+                                        </button>
+                                        <div class="search-popover active">
+                                            <form class="search-form">
+                                                <label for="styleguide-search-field" class="screen-reader-text">Search</label>
+                                                <input type="search" id="styleguide-search-field" placeholder="Search...">
+                                                <button type="submit">Go</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Dot navigation</h3>
+                    <div class="component-preview">
+                        <nav class="dot-nav styleguide-dot-nav" aria-label="Section shortcuts">
+                            <a href="index.html#hero" class="dot active" data-section="hero" aria-label="Hero section"></a>
+                            <a href="index.html#about" class="dot" data-section="about" aria-label="About section"></a>
+                            <a href="index.html#services" class="dot" data-section="services" aria-label="Services section"></a>
+                            <a href="index.html#contact" class="dot" data-section="contact" aria-label="Contact section"></a>
+                        </nav>
+                    </div>
+                    <p class="component-description">Floating dots mirror the scroll indicator and give users a shortcut to landmark sections.</p>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Scroll indicator</h3>
+                    <div class="component-preview">
+                        <div class="scroll-indicator styleguide-scroll-indicator" aria-hidden="true">
+                            <div class="scroll-dot active"></div>
+                            <div class="scroll-dot"></div>
+                            <div class="scroll-dot"></div>
+                            <div class="scroll-dot"></div>
+                        </div>
+                    </div>
+                    <p class="component-description">A fixed stack of dots highlights the current panel as the page snaps between sections.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="brand-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Storytelling</p>
+                <h2 id="brand-heading">Hero &amp; manifesto moments</h2>
+                <p>Editorial modules lean on giant type, overlays, and manifesto language to set the tone before diving into the work.</p>
+            </div>
+            <div class="component-showcase">
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Hero billboard</h3>
+                    <p class="component-description">Full viewport splash with oversized title, glitching tagline, and background texture.</p>
+                    <div class="component-preview component-preview--flush">
+                        <section class="hero styleguide-hero">
+                            <div class="wrapper full">
+                                <h1>NEOBRUTAL ENERGY</h1>
+                                <p>Raw. Unfiltered. Direct.</p>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Founder narrative</h3>
+                    <p class="component-description">Stacked copy, pillars, and stats create a manifesto-style story block.</p>
+                    <div class="component-preview component-preview--padded">
+                        <div class="about-content styleguide-about-content">
+                            <h2>OUR STORY</h2>
+                            <blockquote>
+                                "We don't follow trends. We create disruptions."
+                            </blockquote>
+                            <p class="founder-name">— JANE DOE, FOUNDER</p>
+                            <ul class="founder-pillars">
+                                <li><span aria-hidden="true">★</span> Design with unapologetic honesty.</li>
+                                <li><span aria-hidden="true">★</span> Protect the spark that makes you different.</li>
+                                <li><span aria-hidden="true">★</span> Leave the internet louder than you found it.</li>
+                            </ul>
+                            <div class="founder-signoff">
+                                <p class="signoff-name">Jane Doe</p>
+                                <p class="signoff-title">Founder &amp; Creative Director</p>
+                            </div>
+                            <div class="stats-grid styleguide-stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">150+</span>
+                                    <span class="stat-label">PROJECTS</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">45+</span>
+                                    <span class="stat-label">CLIENTS</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">24/7</span>
+                                    <span class="stat-label">CREATING</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Manifesto card</h3>
+                    <div class="component-preview">
+                        <article class="manifesto-card">
+                            <p class="manifesto-title">Manifesto 01</p>
+                            <p class="manifesto-body">Make the bold feel inevitable. Make the inevitable feel human.</p>
+                            <p class="manifesto-footer">EST. 2024 — BRUTAL STUDIO</p>
+                        </article>
+                    </div>
+                    <p class="component-description">A rotated card with thick borders supports quotes, value props, or highlight stats.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Marquee strip</h3>
+                    <p class="component-description">Old-school <code>&lt;marquee&gt;</code> treatment scrolls hype statements across the screen.</p>
+                    <div class="component-preview component-preview--flush">
+                        <section id="marquee" class="snap-section" style="padding-inline:unset;">
+                            <marquee class="marq" direction="left">
+                                <div class="geek1">Be Brutal!</div>
+                                <div class="geek2">Communication at another level</div>
+                            </marquee>
+                        </section>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="controls-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Inputs</p>
+                <h2 id="controls-heading">Buttons, chips &amp; forms</h2>
+                <p>Controls rely on chunky borders, subtle shadows, and uppercase labels. Keep spacing generous so every tap target feels deliberate.</p>
+            </div>
+            <div class="component-showcase">
+                <article class="component-card">
+                    <h3 class="component-title">Primary buttons</h3>
+                    <div class="component-preview">
+                        <div class="control-row">
+                            <button class="brutal-button">Start something wild</button>
+                            <a class="brutal-button brutal-button--inline" href="staff.html">Meet the crew</a>
+                        </div>
+                    </div>
+                    <p class="component-description">Use the solid block version for main actions and the inline variant for contextual links.</p>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Form inputs</h3>
+                    <div class="component-preview">
+                        <form class="control-stack" action="#" method="post">
+                            <label for="styleguide-input" class="screen-reader-text">Email address</label>
+                            <input class="brutal-input" id="styleguide-input" type="text" placeholder="NAME@EXAMPLE.COM">
+                            <label for="styleguide-message" class="screen-reader-text">Message</label>
+                            <textarea id="styleguide-message" class="brutal-input" placeholder="YOUR MESSAGE"></textarea>
+                        </form>
+                    </div>
+                    <p class="component-description">Inputs keep the same border recipe as buttons but swap shadows for filled surfaces.</p>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Product chips</h3>
+                    <div class="component-preview">
+                        <div class="product-categories" role="group" aria-label="Browse product categories">
+                            <button class="product-chip" type="button">Brand Systems</button>
+                            <button class="product-chip" type="button">Digital Assets</button>
+                            <button class="product-chip" type="button">Merch Drops</button>
+                            <button class="product-chip" type="button">Limited Editions</button>
+                        </div>
+                    </div>
+                    <p class="component-description">Filter chips are bold rectangles with slight rounding and uppercase copy.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Newsletter form</h3>
+                    <div class="component-preview component-preview--padded">
+                        <form class="newsletter-form" action="#" method="post">
+                            <div class="input-group">
+                                <input type="email" placeholder="YOUR@EMAIL.COM" required>
+                                <button type="submit">SUBSCRIBE →</button>
+                            </div>
+                            <p class="newsletter-disclaimer">NO SPAM. JUST BRUTAL CONTENT.</p>
+                        </form>
+                    </div>
+                    <p class="component-description">Email capture pairs a pill-shaped input with an arrow CTA to keep momentum.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="card-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Library</p>
+                <h2 id="card-heading">Card catalog</h2>
+                <p>Cards share the same border weight, drop shadow, and neon accents. Mix and match them inside responsive grids.</p>
+            </div>
+            <div class="component-showcase">
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Services grid</h3>
+                    <div class="component-preview component-preview--padded">
+                        <div class="services-grid">
+                            <article class="service-card">
+                                <span class="material-symbols-outlined service-icon" aria-hidden="true">design_services</span>
+                                <h3 class="service-title">UX DESIGN</h3>
+                                <p class="service-desc">Brutally simple user experiences.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="material-symbols-outlined service-icon" aria-hidden="true">palette</span>
+                                <h3 class="service-title">BRANDING</h3>
+                                <p class="service-desc">Bold visual identities that hit hard.</p>
+                            </article>
+                            <article class="service-card">
+                                <span class="material-symbols-outlined service-icon" aria-hidden="true">code</span>
+                                <h3 class="service-title">DEVELOPMENT</h3>
+                                <p class="service-desc">Fast and accessible web solutions.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <p class="component-description">Three-up layout for highlighting studio offerings.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Product cards</h3>
+                    <div class="component-preview component-preview--padded">
+                        <div class="products-grid">
+                            <article class="product-card">
+                                <header class="product-card__header">
+                                    <span class="product-category">Brand Systems</span>
+                                    <span class="product-price">$2.4K</span>
+                                </header>
+                                <h3 class="product-title">Launch Identity Kit</h3>
+                                <p class="product-desc">Logo suite, typography pairings, and launch collateral ready to ship in two weeks.</p>
+                                <ul class="product-includes">
+                                    <li>Full logo family + usage guide</li>
+                                    <li>Social reveal pack</li>
+                                    <li>Founders deck templates</li>
+                                </ul>
+                            </article>
+                            <article class="product-card">
+                                <header class="product-card__header">
+                                    <span class="product-category">Digital Assets</span>
+                                    <span class="product-price">$980</span>
+                                </header>
+                                <h3 class="product-title">Motion Teaser Bundle</h3>
+                                <p class="product-desc">Hypnotic loops and transitions engineered to hijack timelines.</p>
+                                <ul class="product-includes">
+                                    <li>8 social-ready animations</li>
+                                    <li>Audio-reactive stingers</li>
+                                    <li>Editable source files</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                    <p class="component-description">Commerce layout mixing pricing badges, descriptions, and bullet lists.</p>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Staff card</h3>
+                    <div class="component-preview">
+                        <article class="staff-card">
+                            <img src="img/avatar.jpeg" alt="Portrait of Jane Doe" class="staff-image">
+                            <h3 class="staff-name">JANE DOE</h3>
+                            <p class="staff-role">CREATIVE DIRECTOR</p>
+                            <a class="staff-email" href="mailto:jane.doe@example.com">jane.doe@example.com</a>
+                            <div class="staff-socials">
+                                <a href="https://instagram.com/jane_doe" aria-label="Jane Doe on Instagram">IG</a>
+                                <a href="https://dribbble.com/janedoe" aria-label="Jane Doe on Dribbble">DR</a>
+                                <a href="https://linkedin.com/in/janedoe" aria-label="Jane Doe on LinkedIn">IN</a>
+                            </div>
+                        </article>
+                    </div>
+                    <p class="component-description">Stacked avatar, title, and social handles make every teammate easy to contact.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Location cards</h3>
+                    <div class="component-preview component-preview--padded">
+                        <div class="locations-grid">
+                            <div class="location-card">
+                                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Barcelona office" class="location-image">
+                                <h3>Barcelona</h3>
+                                <p class="location-address">Carrer de l'Example, 123</p>
+                                <div class="location-contact">
+                                    <a href="https://barcelona.brutal.design" class="location-link">Website</a>
+                                    <a href="mailto:hola@brutal.design" class="location-link">hola@brutal.design</a>
+                                    <a href="tel:+34938123456" class="location-link">+34 938 123 456</a>
+                                </div>
+                            </div>
+                            <div class="location-card">
+                                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Bangkok office" class="location-image">
+                                <h3>Bangkok</h3>
+                                <p class="location-address">123 Sukhumvit Rd</p>
+                                <div class="location-contact">
+                                    <a href="https://bangkok.brutal.design" class="location-link">Website</a>
+                                    <a href="mailto:sawasdee@brutal.design" class="location-link">sawasdee@brutal.design</a>
+                                    <a href="tel:+6621234567" class="location-link">+66 2 123 4567</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="component-description">Office callouts double as mini-contact cards with quick links.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Testimonial slider</h3>
+                    <div class="component-preview component-preview--padded">
+                        <div class="testimonials-slider styleguide-testimonial-demo">
+                            <button class="testimonial-nav prev" type="button" aria-label="Previous testimonial">
+                                <span class="dashicons dashicons-arrow-left-alt2"></span>
+                            </button>
+                            <div class="testimonials-viewport">
+                                <div class="testimonials-track testimonials-grid">
+                                    <article class="testimonial-card">
+                                        <p class="testimonial-quote">"Their brutal approach to design completely transformed our brand."</p>
+                                        <div class="testimonial-author">
+                                            <img src="img/avatar.jpeg" alt="Client" class="author-image">
+                                            <div class="author-info">
+                                                <div class="author-name">SARAH PARKER</div>
+                                                <div class="author-role">CEO, TECH CO</div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="testimonial-card">
+                                        <p class="testimonial-quote">"Breaking conventions never looked so good. Traffic doubled after launch."</p>
+                                        <div class="testimonial-author">
+                                            <img src="img/avatar.jpeg" alt="Client" class="author-image">
+                                            <div class="author-info">
+                                                <div class="author-name">MARK JOHNSON</div>
+                                                <div class="author-role">MARKETING DIR</div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <button class="testimonial-nav next" type="button" aria-label="Next testimonial">
+                                <span class="dashicons dashicons-arrow-right-alt2"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="component-description">Carousel controls, cards, and dots combine into a flexible testimonial module.</p>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Staff call-to-action</h3>
+                    <div class="component-preview">
+                        <div class="staff-cta__panel">
+                            <h2>Want your name on this wall?</h2>
+                            <p>We keep a shortlist of collaborators who thrive under neon lights and heavy borders. Send a portfolio and a bold idea.</p>
+                            <a class="brutal-button brutal-button--inline" href="mailto:hello@brutaldesign.example">Pitch the team</a>
+                        </div>
+                    </div>
+                    <p class="component-description">Promo block pulls in the inline button for lighter-weight CTAs.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="media-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Content</p>
+                <h2 id="media-heading">Media &amp; contact modules</h2>
+                <p>Rich media frames, galleries, and contact layouts keep the brutal aesthetic intact while housing embeds.</p>
+            </div>
+            <div class="component-showcase">
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Video feature</h3>
+                    <div class="component-preview component-preview--flush">
+                        <section class="video-section styleguide-video">
+                            <div class="wrapper">
+                                <div class="video-content">
+                                    <div class="video-copy">
+                                        <h2 class="glitch" data-text="PRESS PLAY">PRESS PLAY</h2>
+                                        <p>Step inside the studio. Our manifesto in motion.</p>
+                                    </div>
+                                    <div class="video-frame">
+                                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Studio Reel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <p class="component-description">Embedded video sits inside a bordered frame with dashed overlay.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Gallery layout</h3>
+                    <div class="component-preview component-preview--padded">
+                        <div class="gallery">
+                            <div class="gallery-item large">
+                                <img src="https://picsum.photos/960/540" alt="Brutal Art 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://picsum.photos/640/640" alt="Brutal Art 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://picsum.photos/640/641" alt="Brutal Art 3">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="component-description">Masonry-inspired gallery mixes aspect ratios for visual rhythm.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Contact split</h3>
+                    <div class="component-preview component-preview--padded">
+                        <div class="contact-grid">
+                            <div class="map-container">
+                                <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Map placeholder">
+                            </div>
+                            <div class="contact-info">
+                                <h2>GET IN TOUCH</h2>
+                                <div class="info-item">
+                                    <h3>ADDRESS</h3>
+                                    <p>123 BRUTAL STREET<br>DESIGN DISTRICT<br>12345-678</p>
+                                </div>
+                                <div class="info-item">
+                                    <h3>CONTACT</h3>
+                                    <p>PHONE: +1 234 567 890<br>EMAIL: HELLO@BRUTAL.DESIGN</p>
+                                </div>
+                                <div class="social-links">
+                                    <a href="#" class="social-link">INSTAGRAM</a>
+                                    <a href="#" class="social-link">TWITTER</a>
+                                    <a href="#" class="social-link">LINKEDIN</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="component-description">Two-column layout balances a map embed with key contact details.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="styleguide-section" aria-labelledby="staff-heading">
+            <div class="styleguide-section__header">
+                <p class="eyebrow">Secondary pages</p>
+                <h2 id="staff-heading">Staff page patterns</h2>
+                <p>Supporting pages reuse the same brutal system while adapting the hierarchy for long-form content.</p>
+            </div>
+            <div class="component-showcase">
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Staff page header</h3>
+                    <div class="component-preview component-preview--flush">
+                        <header class="page-header">
+                            <div class="wrapper">
+                                <a class="page-logo" href="index.html">
+                                    <img src="img/logoipsum-332.svg" alt="Brutal Design logo mark">
+                                    <span>Brutal Design</span>
+                                </a>
+                                <nav class="page-nav" aria-label="Staff site">
+                                    <a href="index.html">Home</a>
+                                    <a href="index.html#services">Services</a>
+                                    <a href="index.html#contact">Contact</a>
+                                    <a href="styleguide.html">Styleguide</a>
+                                </nav>
+                            </div>
+                        </header>
+                    </div>
+                    <p class="component-description">A simplified header grounds secondary content with persistent navigation.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Staff hero</h3>
+                    <div class="component-preview component-preview--padded">
+                        <section class="staff-hero" aria-labelledby="staff-hero-title">
+                            <div class="wrapper">
+                                <div class="staff-hero__copy">
+                                    <p class="eyebrow">Inside the studio</p>
+                                    <h1 id="staff-hero-title">Meet the staff</h1>
+                                    <p class="lede">The brutalist energy only works because a scrappy crew keeps the lights buzzing. Every collaborator brings their own flavor of chaos, craft, and care.</p>
+                                </div>
+                                <aside class="staff-hero__note" aria-label="Team snapshot">
+                                    <p>12 makers, 4 cities, one neon-soaked mission: build experiences that leave a mark.</p>
+                                    <p class="note-footnote">Updated monthly so you always know who to ping for the next wild idea.</p>
+                                </aside>
+                            </div>
+                        </section>
+                    </div>
+                    <p class="component-description">Intro section pairs a lead copy block with a punchy sidebar note.</p>
+                </article>
+                <article class="component-card">
+                    <h3 class="component-title">Staff directory header</h3>
+                    <div class="component-preview">
+                        <div class="staff-directory__header">
+                            <h2 class="glitch" data-text="THE CREW">THE CREW</h2>
+                            <p>Hover any card to copy their vibe. Click the emails to start something brutal.</p>
+                        </div>
+                    </div>
+                    <p class="component-description">Section header leans on the glitch effect to frame the team grid.</p>
+                </article>
+                <article class="component-card component-card--wide">
+                    <h3 class="component-title">Staff page footer</h3>
+                    <div class="component-preview component-preview--flush">
+                        <footer class="page-footer">
+                            <div class="wrapper">
+                                <p>© Brutal Design 2024 · <a href="mailto:hello@brutaldesign.example">hello@brutaldesign.example</a></p>
+                            </div>
+                        </footer>
+                    </div>
+                    <p class="component-description">Simple footer keeps attention on the contact point.</p>
+                </article>
             </div>
         </section>
 
@@ -117,6 +622,7 @@
                 <li>Stack content inside bold borders and drop shadows to sell the brutalist vibe.</li>
                 <li>Reserve the yellow accent for calls-to-action and animated details.</li>
                 <li>Always provide a contrasting fallback color when placing type over imagery.</li>
+                <li>When in doubt, default to uppercase copy and slightly overstated letter spacing.</li>
             </ul>
         </section>
     </main>
