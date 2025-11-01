@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Neobrutalism Demo · Contact</title>
+    <meta name="description" content="Reach Brutal Design's studios, support lines, and collaboration teams from one bold contact hub.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://s.w.org/wp-includes/css/dashicons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body class="contact-page">
+    <header class="page-header">
+        <div class="wrapper">
+            <a class="page-logo" href="index.html">
+                <img src="img/logoipsum-332.svg" alt="Brutal Design logo mark">
+                <span>Brutal Design</span>
+            </a>
+            <nav class="page-nav" aria-label="Contact site">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="staff.html">Staff</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+                <a href="styleguide.html">Styleguide</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-hero" aria-labelledby="contact-hero-title">
+            <div class="wrapper">
+                <div class="contact-hero__copy">
+                    <p class="eyebrow">Let's make it loud</p>
+                    <h1 id="contact-hero-title">Contact Brutal Design</h1>
+                    <p class="lede">Four studios. Dozens of makers. One inbox that actually replies. Ping us for new projects, press requests, or to host your next neon-fueled session.</p>
+                </div>
+                <aside class="contact-hero__meta" aria-label="Contact highlights">
+                    <dl>
+                        <div>
+                            <dt>Studios online</dt>
+                            <dd>24/5</dd>
+                        </div>
+                        <div>
+                            <dt>Average response</dt>
+                            <dd>Under 1 business day</dd>
+                        </div>
+                        <div>
+                            <dt>Press hotline</dt>
+                            <dd>press@brutaldesign.example</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <section class="contact-grid-section" aria-labelledby="global-hub-title">
+            <div class="wrapper">
+                <div class="section-heading">
+                    <p class="eyebrow">Global hub</p>
+                    <h2 id="global-hub-title" class="glitch" data-text="VISIT OR DIAL IN">VISIT OR DIAL IN</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.1498!2d-46.6555!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM0JzE4LjAiUyA0NsKwMzknMTkuOCJX!5e0!3m2!1sen!2sbr!4v1620151877964!5m2!1sen!2sbr"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Map showing Brutal Design São Paulo studio"></iframe>
+                    </div>
+                    <div class="contact-info">
+                        <h2>Get in touch</h2>
+                        <div class="info-item">
+                            <h3>Studios</h3>
+                            <p>New York · Berlin · Tokyo · São Paulo</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>General inquiries</h3>
+                            <p>hello@brutaldesign.example<br>+1 (212) 555-4859</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Project kickoff</h3>
+                            <p>projects@brutaldesign.example<br>Brief us anytime — we reply fast.</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Press &amp; media</h3>
+                            <p>press@brutaldesign.example<br>+49 30 5557 2240</p>
+                        </div>
+                        <div class="social-links" aria-label="Social channels">
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Twitter</a>
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">Behance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section" aria-labelledby="contact-form-title">
+            <div class="wrapper">
+                <div class="contact-form__intro">
+                    <p class="eyebrow">Drop a line</p>
+                    <h2 id="contact-form-title">Tell us what you're building</h2>
+                    <p>Give us the sparks—vision, timeline, budget vibe—and we’ll assemble the crew. Expect a tailored response from the right studio lead.</p>
+                </div>
+                <form class="brutal-form" action="https://example.com/contact" method="post">
+                    <div class="form-grid">
+                        <label for="name">Your name
+                            <input class="brutal-input" type="text" id="name" name="name" autocomplete="name" required>
+                        </label>
+                        <label for="email">Email
+                            <input class="brutal-input" type="email" id="email" name="email" autocomplete="email" required>
+                        </label>
+                        <label for="company">Company or collective
+                            <input class="brutal-input" type="text" id="company" name="company" autocomplete="organization">
+                        </label>
+                        <label for="budget">Budget range
+                            <select class="brutal-input" id="budget" name="budget">
+                                <option value="">Select an option</option>
+                                <option value="15k">$15k – $30k</option>
+                                <option value="30k">$30k – $75k</option>
+                                <option value="75k">$75k – $150k</option>
+                                <option value="150k">$150k+</option>
+                            </select>
+                        </label>
+                    </div>
+                    <label for="message">Project details
+                        <textarea class="brutal-input" id="message" name="message" rows="6" required></textarea>
+                    </label>
+                    <button class="brutal-button" type="submit">Send it loud →</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-support" aria-labelledby="support-title">
+            <div class="wrapper">
+                <div class="support-grid">
+                    <article class="support-card">
+                        <h3 id="support-title">Support &amp; maintenance</h3>
+                        <p>Already shipped with us? Email <a href="mailto:support@brutaldesign.example">support@brutaldesign.example</a> for SLA-level help or drop urgent bugs into our 24/7 line: +81 3-5555-6670.</p>
+                    </article>
+                    <article class="support-card">
+                        <h3>Visit a studio</h3>
+                        <p>Pop in for critiques, sound sessions, or to capture content. Book a slot and we’ll prep the rig: <a href="mailto:visit@brutaldesign.example">visit@brutaldesign.example</a>.</p>
+                    </article>
+                    <article class="support-card">
+                        <h3>Community &amp; collabs</h3>
+                        <p>We love residencies and pop-ups. Pitch concepts to <a href="mailto:collab@brutaldesign.example">collab@brutaldesign.example</a> and we’ll co-create something unignorable.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="wrapper">
+            <p>© Brutal Design 2024 · <a href="mailto:hello@brutaldesign.example">hello@brutaldesign.example</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1064,6 +1064,13 @@ body.staff-page {
     transform: translate(-2px, -2px);
 }
 
+.page-nav a[aria-current="page"] {
+    background: var(--c-accent);
+    border-color: var(--border-color);
+    color: var(--c-text);
+    cursor: default;
+}
+
 .staff-hero {
     background: var(--c-bg-alt);
     border-block: var(--border-width) var(--border-style) var(--border-color);
@@ -1177,6 +1184,199 @@ body.staff-page {
     padding-inline: 2.5rem;
 }
 
+/*
+ * CONTACT PAGE
+ */
+
+body.contact-page {
+    background: var(--c-bg);
+    color: var(--c-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 6vw, 6rem);
+}
+
+.contact-hero {
+    background: var(--c-bg-alt);
+    border-block: var(--border-width) var(--border-style) var(--border-color);
+    padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.contact-hero .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.contact-hero__copy {
+    display: grid;
+    gap: 1rem;
+    text-transform: uppercase;
+}
+
+.contact-hero__copy h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.contact-hero__copy .lede {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    text-transform: none;
+}
+
+.contact-hero__meta {
+    background: var(--c-bg);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-hero__meta dl {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-hero__meta dt {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contact-grid-section {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.contact-grid-section .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.section-heading {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 640px;
+}
+
+.section-heading p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.contact-form-section {
+    padding-block: clamp(4rem, 8vw, 6rem);
+    background: var(--c-bg-alt);
+}
+
+.contact-form-section .wrapper {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.contact-form__intro {
+    max-width: 640px;
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form__intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.brutal-form {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.contact-form-section label {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-form-section .brutal-input {
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+}
+
+.contact-form-section textarea.brutal-input {
+    resize: vertical;
+    min-height: 180px;
+}
+
+.contact-form-section select.brutal-input {
+    appearance: none;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"%3E%3Cpath d="M1 1L6 6L11 1" stroke="%23000000" stroke-width="2"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px 8px;
+}
+
+.contact-form-section .brutal-button {
+    justify-self: start;
+    width: auto;
+    padding-inline: 2.5rem;
+}
+
+.contact-support {
+    padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.contact-support .wrapper {
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+
+.support-grid {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.support-card {
+    background: var(--c-bg-alt);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.support-card h3 {
+    text-transform: uppercase;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.support-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.support-card a {
+    font-weight: 700;
+}
+
 .page-footer {
     margin-top: auto;
     background: var(--c-bg);
@@ -1201,6 +1401,11 @@ body.staff-page {
 
     .brutal-button--inline {
         width: 100%;
+    }
+
+    .contact-form-section .brutal-button {
+        width: 100%;
+        justify-content: center;
     }
 }
 
