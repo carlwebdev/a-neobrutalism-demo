@@ -426,6 +426,9 @@ section {
         line-height: 1;
         margin-bottom: 20px;
         text-transform: uppercase;
+        /* Allow long hero headlines to wrap instead of causing horizontal overflow */
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     p {
