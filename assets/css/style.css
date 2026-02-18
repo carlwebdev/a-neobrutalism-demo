@@ -96,6 +96,8 @@ header {
     padding-block: 6em;
     padding-block: 2em;
     padding-inline: clamp(2rem, 5vw, 4rem);
+    position: relative;
+    z-index: 30;
 
 
 
@@ -205,6 +207,10 @@ img.logo {
 
 }
 
+body.dark-mode img.logo {
+    filter: drop-shadow(1px 0 0 rgba(249, 250, 251, 0.92)) drop-shadow(-1px 0 0 rgba(249, 250, 251, 0.92)) drop-shadow(0 1px 0 rgba(249, 250, 251, 0.92)) drop-shadow(0 -1px 0 rgba(249, 250, 251, 0.92)) drop-shadow(0 0 2px rgba(249, 250, 251, 0.5));
+}
+
 
 
 nav.nav {
@@ -276,7 +282,7 @@ nav.nav a:hover {
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
 
     header .inner {
         flex-wrap: nowrap;
@@ -330,6 +336,11 @@ nav.nav a:hover {
 
     .nav-toggle {
         order: 4;
+        margin-left: 0;
+    }
+
+    .header-search {
+        order: 5;
         margin-left: 0;
     }
 }
@@ -395,13 +406,8 @@ section {
     /* margin: 20px; */
     /* background: #ff0000; */
     /* background: #212121; */
-    background-color: var(--c-bg);
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url('img/hero-bg.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    isolation: isolate;
     color: var(--c-text);
 
 
@@ -439,6 +445,25 @@ section {
     }
 
 
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: var(--c-bg);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('../img/hero-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+body.dark-mode .hero::before {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 .theme-toggle__button {
@@ -1045,6 +1070,10 @@ body.staff-page {
     height: auto;
 }
 
+body.dark-mode .page-logo img {
+    filter: drop-shadow(1px 0 0 rgba(249, 250, 251, 0.92)) drop-shadow(-1px 0 0 rgba(249, 250, 251, 0.92)) drop-shadow(0 1px 0 rgba(249, 250, 251, 0.92)) drop-shadow(0 -1px 0 rgba(249, 250, 251, 0.92)) drop-shadow(0 0 2px rgba(249, 250, 251, 0.5));
+}
+
 .page-nav {
     display: flex;
     align-items: center;
@@ -1465,7 +1494,7 @@ body.locations-page {
 }
 
 .locations-grid .location-card {
-    background: var(--c-bg);
+    background: var(--c-bg-alt);
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -1818,7 +1847,7 @@ body.locations-page {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 9rem;
+    font-size: 3rem !important;
     margin-bottom: 1rem;
     color: var(--c-accent);
 }
@@ -2625,6 +2654,7 @@ body.locations-page {
 /* Search popover in header */
 .header-search {
     position: relative;
+    z-index: 40;
 }
 
 .search-toggle {
@@ -2656,7 +2686,7 @@ body.locations-page {
 .search-popover {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.75rem);
     right: 0;
     background: var(--c-bg);
     color: var(--c-text);
@@ -2664,13 +2694,23 @@ body.locations-page {
     box-shadow: var(--box-shadow);
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
+    z-index: 50;
 }
 
 .search-popover.active {
     display: block;
 }
 
+.search-popover .search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.75em;
+}
+
 .search-popover input[type="search"] {
+    flex: 1;
+    min-width: 180px;
     padding: 0.5em;
     border: var(--border-width) var(--border-style) var(--border-color);
     background: var(--c-bg-alt);
@@ -2678,7 +2718,7 @@ body.locations-page {
 }
 
 .search-popover button {
-    margin-left: 0.5em;
+    margin-left: 0;
     padding: 0.5em 1em;
     border: var(--border-width) var(--border-style) var(--border-color);
     background: var(--c-bg-alt);
